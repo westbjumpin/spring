@@ -1159,7 +1159,6 @@ float CUnit::GetFlankingDamageBonus(const float3& attackDir)
 	if (flankingBonusMode == 1) {
 		// mode 1 = global coordinates, mobile
 		flankingBonusDir += (attackDir * flankingBonusMobility);
-		flankingBonusDir.Normalize();
 		flankingBonusMobility = 0.0f;
 		flankingBonus = (flankingBonusAvgDamage - attackDir.dot(flankingBonusDir) * flankingBonusDifDamage);
 	} else {

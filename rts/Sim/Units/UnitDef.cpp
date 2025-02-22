@@ -451,7 +451,7 @@ UnitDef::UnitDef(const LuaTable& udTable, const std::string& unitName, int id)
 	flankingBonusMode = udTable.GetInt("flankingBonusMode", modInfo.flankingBonusModeDefault);
 	flankingBonusMax  = udTable.GetFloat("flankingBonusMax", modInfo.flankingBonusMaxDefault);
 	flankingBonusMin  = udTable.GetFloat("flankingBonusMin", modInfo.flankingBonusMinDefault);
-	flankingBonusDir  = udTable.GetFloat3("flankingBonusDir", FwdVector);
+	flankingBonusDir  = udTable.GetFloat3("flankingBonusDir", FwdVector).Normalized();
 	flankingBonusMobilityAdd = udTable.GetFloat("flankingBonusMobilityAdd", 0.01f);
 
 	armoredMultiple = udTable.GetFloat("damageModifier", 1.0f);
